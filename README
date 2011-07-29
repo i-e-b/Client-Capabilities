@@ -1,0 +1,8 @@
+Client-Capabilities is a set of ASP.Net webforms controls that allow you to template content
+so that the appropriate content is displayed to the user, based on the browser's capabilities
+and plugins.
+
+This uses a Javascript file called DPlugin that I can't find the original author for (and I've modified it since).
+
+The default page of the project shows usage. None of the template entries are required.
+See a real world implementation example at http://www.parliamentlive.tv/Main/Help.aspx 
