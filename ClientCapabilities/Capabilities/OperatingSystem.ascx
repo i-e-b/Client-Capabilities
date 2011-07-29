@@ -1,0 +1,2 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="OperatingSystem.ascx.cs" Inherits="BrowserCapabilities.Capabilities.OperatingSystem" %>
+<asp:PlaceHolder ID="MacXTemplate" runat="server"></asp:PlaceHolder><asp:PlaceHolder ID="WinXPTemplate" runat="server"></asp:PlaceHolder><asp:PlaceHolder ID="WinVistaTemplate" runat="server"></asp:PlaceHolder><asp:PlaceHolder ID="Win7Template" runat="server"></asp:PlaceHolder><asp:PlaceHolder ID="LinuxTemplate" runat="server"></asp:PlaceHolder><asp:PlaceHolder ID="OtherTemplate" runat="server"></asp:PlaceHolder>

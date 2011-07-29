@@ -3,6 +3,7 @@ obj
 *.user
 *.suo
 *.cache
+_ReSharper.*
 /*/_ReSharper.*
 /*/*/_ReSharper.*
 /*/*/obj
