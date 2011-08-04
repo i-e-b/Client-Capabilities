@@ -472,35 +472,10 @@
                 version = this.getFlashVersion();
                 break;
             case "silverlight":
-                /*var obj = this.currentObjectTag;
-                var created = false;
-                if (obj == null) {
-                var id = this.insertSilverlightPlugin();
-                if (id) {
-                obj = document.getElementById(id);
-                created = true;
-                }
-                }
-                if (obj) {
-                for (var i = this.knownSilverlightVersions.length - 1; i >= 0; i--) {
-                var v = this.knownSilverlightVersions[i];
-                try {
-                if (obj.isVersionSupported(v)) {
-                version = v;
-                break;         
-                }
-                }
-                catch (ex) {
-                }
-                }
-                if (created) {
-                obj.parentNode.removeChild(obj);
-                }
-                }*/
                 var nav = navigator.plugins["Silverlight Plug-In"];
                 if (nav) {
                     for (var i = 0; i < 4; i++) {
-                        version = nav.description;   //getControl().isVersionSupported("2.0"); 
+                        version = nav.description;
                     }
                 } else {//try the IE one now.
                     try {
@@ -544,7 +519,6 @@
         if (vpn > version) {
             version = vpn;
         }
-        //alert(key + ' = ' + version);
         this.getPluginVersionCache[key] = version;
         return version;
     },
@@ -705,9 +679,7 @@
     },
 
     /*	Override for customized behavior. Returning false will prevent the browser from following the downloadURL.	*/
-    downloadPlugin: function(e, objId) {
-        return true;
-    },
+    downloadPlugin: function(e, objId) {return true;},
 
     /*	Is called onload/onDOMContentLoaded. It traverses each OBJECT element and detects the kind of plugin. If detection is successful, it detects if the browser supports this kind of plugin.
     If it does, it detects if the markup indicates a required version of the plugin. If this is the case the version supported by the browser is detected.

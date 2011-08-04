@@ -20,6 +20,7 @@ namespace BrowserCapabilities.Capabilities {
 		#region Template Properties
 		private ITemplate IE6tmpl;
 		private ITemplate IE7plustmpl;
+		private ITemplate IE9plustmpl;
 		private ITemplate FF2plustmpl;
 		private ITemplate Othertmpl;
 		private ITemplate Sf2plustmpl;
@@ -66,6 +67,16 @@ namespace BrowserCapabilities.Capabilities {
 		}
 
 		/// <summary>
+		/// Content visible to IE 9+ users
+		/// </summary>
+		[TemplateContainer(typeof(BrowserType))]
+		[PersistenceMode(PersistenceMode.InnerProperty)]
+		public ITemplate IE9plus {
+			get { return IE9plustmpl; }
+			set { IE9plustmpl = value; }
+		}
+
+		/// <summary>
 		/// Content visible to Firefox 2+ users
 		/// </summary>
 		[TemplateContainer(typeof(BrowserType))]
@@ -107,6 +118,12 @@ namespace BrowserCapabilities.Capabilities {
 				IE7plusTemplate.Controls.Add(container2);
 			}
 
+			if (IE9plus != null) {
+				var container21 = new NameContainer();
+				IE9plus.InstantiateIn(container21);
+				IE9plusTemplate.Controls.Add(container21);
+			}
+
 			if (FF2plus != null) {
 				var container3 = new NameContainer();
 				FF2plus.InstantiateIn(container3);
@@ -133,6 +150,7 @@ namespace BrowserCapabilities.Capabilities {
 		protected void Page_Load (object sender, EventArgs e) {
 			Hide(IE6Template);
 			Hide(IE7plusTemplate);
+			Hide(IE9plusTemplate);
 			Hide(FF2plusTemplate);
 			Hide(Sf2plusTemplate);
 			Hide(GCrTemplate);
@@ -157,6 +175,9 @@ namespace BrowserCapabilities.Capabilities {
 				Hide(OtherTemplate);
 			} else if (brws.Contains("ie7plus")) {
 				Show(IE7plusTemplate);
+				Hide(OtherTemplate);
+			} else if (brws.Contains("ie9plus")) {
+				Show(IE9plusTemplate);
 				Hide(OtherTemplate);
 			} else if (brws.Contains("ff2plus")) {
 				Show(FF2plusTemplate);
@@ -190,10 +211,13 @@ namespace BrowserCapabilities.Capabilities {
 			if (brws.Contains("ie") && vers == 6 && IE6 != null) {
 				Show(IE6Template);
 				Hide(OtherTemplate);
-			} else if (brws.Contains("ie") && vers >= 7 && IE7plus != null) {
+			} else if (brws.Contains("ie") && vers >= 9 && IE9plus != null) {
+				Show(IE9plusTemplate);
+				Hide(OtherTemplate);
+			} else if (brws.Contains("ie") && vers < 9 && IE7plus != null) {
 				Show(IE7plusTemplate);
 				Hide(OtherTemplate);
-			} else if (brws.Contains("firefox") && vers >= 2 && FF2plus != null) {
+			}  else if (brws.Contains("firefox") && vers >= 2 && FF2plus != null) {
 				Show(FF2plusTemplate);
 				Hide(OtherTemplate);
 			} else if (brws.Contains("safari")) {

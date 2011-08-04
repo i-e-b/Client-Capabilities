@@ -18,6 +18,7 @@
 		<IE6>Looks like you're browsing with IE6, you stick-in-the-mud.
 		     Web developers everywhere are cursing you this very moment.</IE6>
 		<IE7plus>Looks like you're browsing with IE7. That's OK.</IE7plus>
+		<IE9plus>Looks like you're browsing with IE9. That's pretty nice.</IE9plus>
 		<FF2plus>Looks like you're browsing with Firefox 2 or greater. That's pretty nice.</FF2plus>
 		<Sf2plus>Looks like you're browsing with Safari 2 or greater. That's pretty nice.</Sf2plus>
 		<Gcr>Looks like you're browsing with Google Chrome. That's pretty nice.</Gcr>
@@ -127,37 +128,37 @@
     	<WinXP>
     		XP / 
     			<cap:BrowserType ID="BTI1" runat="server">
-				<IE6>IE6</IE6> <IE7plus>IE7</IE7plus> <FF2plus>FF2</FF2plus> <Sf2plus>Sf2</Sf2plus> <GCr>GCr</GCr> <Other>?</Other>
+				<IE6>IE6</IE6> <IE7plus>IE7</IE7plus> <IE9plus>IE9</IE9plus> <FF2plus>FF2</FF2plus> <Sf2plus>Sf2</Sf2plus> <GCr>GCr</GCr> <Other>?</Other>
 				</cap:BrowserType>
     	</WinXP>
 		<WinVista>
 		Vista / 
     			<cap:BrowserType ID="BTI2" runat="server">
-				<IE6>IE6</IE6> <IE7plus>IE7</IE7plus> <FF2plus>FF2</FF2plus> <Sf2plus>Sf2</Sf2plus> <GCr>GCr</GCr> <Other>?</Other>
+				<IE6>IE6</IE6> <IE7plus>IE7</IE7plus> <IE9plus>IE9</IE9plus> <FF2plus>FF2</FF2plus> <Sf2plus>Sf2</Sf2plus> <GCr>GCr</GCr> <Other>?</Other>
 				</cap:BrowserType>
 		</WinVista>
 		<WinVista>
 		Win7 / 
     			<cap:BrowserType ID="BTI2_5" runat="server">
-				<IE6>IE6</IE6> <IE7plus>IE7</IE7plus> <FF2plus>FF2</FF2plus> <Sf2plus>Sf2</Sf2plus> <GCr>GCr</GCr> <Other>?</Other>
+				<IE6>IE6</IE6> <IE7plus>IE7</IE7plus> <IE9plus>IE9</IE9plus> <FF2plus>FF2</FF2plus> <Sf2plus>Sf2</Sf2plus> <GCr>GCr</GCr> <Other>?</Other>
 				</cap:BrowserType>
 		</WinVista>
 		<MacX>
 		Mac OS X / 
     			<cap:BrowserType ID="BTI3" runat="server">
-				<IE6>IE6</IE6> <IE7plus>IE7</IE7plus> <FF2plus>FF2</FF2plus> <Sf2plus>Sf2</Sf2plus> <GCr>GCr</GCr> <Other>?</Other>
+				<IE6>IE6</IE6> <IE7plus>IE7</IE7plus> <IE9plus>IE9</IE9plus> <FF2plus>FF2</FF2plus> <Sf2plus>Sf2</Sf2plus> <GCr>GCr</GCr> <Other>?</Other>
 				</cap:BrowserType>
 		</MacX>
 		<Linux>
 		Linux / 
     			<cap:BrowserType ID="BTI4" runat="server">
-				<IE6>IE6</IE6> <IE7plus>IE7</IE7plus> <FF2plus>FF2</FF2plus> <Sf2plus>Sf2</Sf2plus> <GCr>GCr</GCr> <Other>?</Other>
+				<IE6>IE6</IE6> <IE7plus>IE7</IE7plus> <IE9plus>IE9</IE9plus> <FF2plus>FF2</FF2plus> <Sf2plus>Sf2</Sf2plus> <GCr>GCr</GCr> <Other>?</Other>
 				</cap:BrowserType>
 		</Linux>
 		<Other>
 		? / 
     			<cap:BrowserType ID="BTI5" runat="server">
-				<IE6>IE6</IE6> <IE7plus>IE7</IE7plus> <FF2plus>FF2</FF2plus> <Sf2plus>Sf2</Sf2plus> <GCr>GCr</GCr> <Other>?</Other>
+				<IE6>IE6</IE6> <IE7plus>IE7</IE7plus> <IE9plus>IE9</IE9plus> <FF2plus>FF2</FF2plus> <Sf2plus>Sf2</Sf2plus> <GCr>GCr</GCr> <Other>?</Other>
 				</cap:BrowserType>
 		</Other>
     	</cap:OperatingSystem>
@@ -165,7 +166,7 @@
 		<h2>Force other results:</h2>
 		<div>
 			Systems: <a href="?sysel=macintosh">Mac OS X</a> | <a href="?sysel=windows">Windows XP</a> | <a href="?sysel=windows%20nt%206">Windows Vista</a> | <a href="?sysel=windows%20nt%206.1">Windows 7</a><br />
-			Browsers: <a href="?brsel=IE6">IE 6</a> | <a href="?brsel=IE7plus">IE 7</a> | <a href="?brsel=FF2plus">Firefox</a> | <a href="?brsel=Sf2plus">Safari</a><br />
+			Browsers: <a href="?brsel=IE6">IE 6</a> | <a href="?brsel=IE7plus">IE 7+</a> | <a href="?brsel=IE9plus">IE 9+</a> | <a href="?brsel=FF2plus">Firefox</a> | <a href="?brsel=Sf2plus">Safari</a><br />
 			<a href="Default.aspx">Re-detect current system</a>
 		</div>
     </form>
