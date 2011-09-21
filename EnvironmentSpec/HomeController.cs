@@ -16,17 +16,17 @@ namespace iFrameInnerReplaceTest.Controllers {
 			var environmentSpec = js.Deserialize<EnvironmentSpec>(spec);
 
 			// Some sample logic
-			object redirect = GuessTypes(environmentSpec);
+			var redirect = GuessTypes(environmentSpec);
 
-			return View(redirect);
+			return new JavaScriptResult{Script = "/Home/Redirected?type=" + redirect};
 		}
 
-		private object GuessTypes(EnvironmentSpec environment) {
-			string guesses = "";
-			if (environment.HasSilverlight(3)) guesses += "Silverlight 3+ [Smooth, MP4, WMV]; ";
-			if (environment.HasFlash(10)) guesses += "Flash 10+ [FLV, F4V, MP4]; ";
+		private string GuessTypes(EnvironmentSpec environment) {
+			string guesses = environment.GetBrowserType().ToString();
+			if (environment.HasSilverlight(3)) guesses += " Silverlight 3+ [Smooth, MP4, WMV];";
+			if (environment.HasFlash(10)) guesses += " Flash 10+ [FLV, F4V, MP4];";
 
-			guesses += "HTML5 [";
+			guesses += " HTML5 [";
 			if (environment.NativeMP4()) guesses += "MP4; ";
 			if (environment.NativeAacAudio()) guesses += "AAC; ";
 			if (environment.NativeHLS()) guesses += "HLS; ";
@@ -34,7 +34,7 @@ namespace iFrameInnerReplaceTest.Controllers {
 			if (environment.NativeOggAudio()) guesses += "Ogg Audio; ";
 			if (environment.NativeOggVideo()) guesses += "Ogg Video; ";
 			if (environment.NativeWebM()) guesses += "WebM; ";
-			guesses += "]; ";
+			guesses += "];";
 
 			return guesses.Replace(" ","_");
 		}

@@ -60,14 +60,9 @@ envspec.MediaFeatures = {
 			v,
 			html5Elements = ['source', 'track', 'audio', 'video'];
 
-		// detect browsers (only the ones that have some kind of quirk we need to work around)
-		this.isiPad = (ua.match(/ipad/i) !== null);
-		this.isiPhone = (ua.match(/iphone/i) !== null);
-		this.isAndroid = (ua.match(/android/i) !== null);
+		envspec.Specification.UserAgent = ua;
+
 		this.isBustedAndroid = (ua.match(/android 2\.[12]/) !== null);
-		this.isIE = (nav.appName.toLowerCase().indexOf("microsoft") != -1);
-		this.isChrome = (ua.match(/chrome/gi) !== null);
-		this.isFirefox = (ua.match(/firefox/gi) !== null);
 
 		// create HTML5 media elements for IE before 9, get a <video> element for fullscreen detection
 		for (i = 0; i < html5Elements.length; i++) {
